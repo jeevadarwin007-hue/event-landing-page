@@ -1,5 +1,5 @@
 /* ==========================================================
-   1. DESIGN SYSTEM & CSS VARIABLES [00:20:00, 00:24:20]
+   1. DESIGN SYSTEM & CSS VARIABLES
    ========================================================== */
 :root {
   --primary: #0284c7;
@@ -11,21 +11,22 @@
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
   --border-color: rgba(255, 255, 255, 0.08);
+  --error-color: #ef4444;
+  --success-color: #10b981;
 
   --font-heading: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
-
-  --max-width: 1140px; /* [01:17:45] */
+  --max-width: 1140px;
   --transition: all 0.25s ease-in-out;
 }
 
 /* ==========================================================
-   2. GLOBAL RESET & BASE STYLES [00:52:11]
+   2. GLOBAL RESET & BASE STYLES
    ========================================================== */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* [00:52:35] */
+  box-sizing: border-box;
 }
 
 html {
@@ -39,14 +40,12 @@ body {
   line-height: 1.6;
 }
 
-/* Reusable Container [01:17:36] */
 .container {
   width: 90%;
   max-width: var(--max-width);
   margin: 0 auto;
 }
 
-/* Typography [02:00:25] */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
   font-weight: 700;
@@ -58,7 +57,7 @@ a {
   color: inherit;
 }
 
-/* Reusable Buttons [00:36:51] */
+/* Buttons */
 .btn {
   display: inline-block;
   font-family: var(--font-body);
@@ -69,6 +68,7 @@ a {
   cursor: pointer;
   transition: var(--transition);
   text-align: center;
+  border: none;
 }
 
 .btn-primary {
@@ -99,9 +99,12 @@ a {
   font-size: 1.05rem;
 }
 
-/* ==========================================================
-   3. NAVBAR (FLEXBOX) [01:07:09]
-   ========================================================== */
+.btn-block {
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* Navbar */
 .header {
   position: sticky;
   top: 0;
@@ -112,9 +115,9 @@ a {
 }
 
 .navbar {
-  display: flex; /* [01:07:25] */
-  align-items: center; /* [01:08:13] */
-  justify-content: space-between; /* [01:08:45] */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: 1.1rem 0;
 }
 
@@ -147,10 +150,10 @@ a {
 }
 
 /* ==========================================================
-   4. HERO / BANNER SECTION [01:03:40]
+   3. HERO & COUNTDOWN TIMER (ADDITIONAL FEATURE)
    ========================================================== */
 .hero {
-  padding: 6rem 0 5rem;
+  padding: 5.5rem 0 4.5rem;
   background: radial-gradient(circle at 50% 20%, rgba(2, 132, 199, 0.18), transparent 70%);
   text-align: center;
 }
@@ -178,7 +181,41 @@ a {
   font-size: 1.15rem;
   color: var(--text-muted);
   max-width: 680px;
+  margin: 0 auto 2rem;
+}
+
+/* Countdown Styles */
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
   margin: 0 auto 2.5rem;
+  flex-wrap: wrap;
+}
+
+.countdown-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 1rem 1.4rem;
+  border-radius: 10px;
+  min-width: 85px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.countdown-num {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+}
+
+.countdown-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 1px;
 }
 
 .hero-cta-group {
@@ -189,7 +226,7 @@ a {
 }
 
 /* ==========================================================
-   5. DATE, TIME & VENUE CARDS (CSS GRID) [01:55:16]
+   4. INFO, HIGHLIGHTS & SCHEDULE SECTIONS
    ========================================================== */
 .section {
   padding: 5rem 0;
@@ -197,7 +234,7 @@ a {
 
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* [01:55:24] */
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
 }
 
@@ -238,9 +275,6 @@ a {
   color: var(--accent);
 }
 
-/* ==========================================================
-   6. EVENT HIGHLIGHTS SECTION [02:39:00]
-   ========================================================== */
 .section-header {
   text-align: center;
   max-width: 650px;
@@ -326,9 +360,6 @@ a {
   margin-bottom: 0.35rem;
 }
 
-/* ==========================================================
-   7. SCHEDULE / TIMELINE SECTION [02:22:00]
-   ========================================================== */
 .timeline {
   max-width: 780px;
   margin: 0 auto;
@@ -368,9 +399,6 @@ a {
   color: var(--text-muted);
 }
 
-/* ==========================================================
-   8. CTA BANNER [02:04:00]
-   ========================================================== */
 .cta-banner {
   background: linear-gradient(135deg, #0369a1, #1e3a8a);
   padding: 4.5rem 0;
@@ -392,9 +420,6 @@ a {
   margin-bottom: 2rem;
 }
 
-/* ==========================================================
-   9. FOOTER [03:05:00]
-   ========================================================== */
 .footer {
   border-top: 1px solid var(--border-color);
   padding: 2.5rem 0;
@@ -409,68 +434,192 @@ a {
 }
 
 /* ==========================================================
-   10. RESPONSIVE DESIGN & MEDIA QUERIES [01:21:21, 01:24:34]
+   5. REGISTRATION MODAL & FORM VALIDATION STYLES
    ========================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  padding: 1.5rem;
+}
 
-/* Tablet & Smaller Laptops (Max-Width: 992px) [01:24:00] */
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 500px;
+  padding: 2.2rem 2rem;
+  position: relative;
+  transform: translateY(20px);
+  transition: var(--transition);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.modal-overlay.active .modal-card {
+  transform: translateY(0);
+}
+
+.close-modal-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.close-modal-btn:hover {
+  color: #ffffff;
+}
+
+.modal-header {
+  margin-bottom: 1.8rem;
+}
+
+.modal-header h3 {
+  font-size: 1.6rem;
+  margin: 0.4rem 0 0.3rem;
+}
+
+.modal-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #0b1120;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: var(--accent);
+}
+
+/* Error States */
+.form-group input.invalid,
+.form-group select.invalid {
+  border-color: var(--error-color);
+}
+
+.error-msg {
+  color: var(--error-color);
+  font-size: 0.8rem;
+  display: none;
+  margin-top: 0.15rem;
+}
+
+.error-msg.visible {
+  display: block;
+}
+
+/* Success Card */
+.success-box {
+  display: none;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.success-box.active {
+  display: block;
+}
+
+.success-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(16, 185, 129, 0.2);
+  color: var(--success-color);
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+}
+
+.success-box h4 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.success-box p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================================
+   6. RESPONSIVE MEDIA QUERIES
+   ========================================================== */
 @media screen and (max-width: 992px) {
   .hero-title {
     font-size: 2.4rem;
   }
   .info-grid,
   .cards-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Mobile Devices (Max-Width: 768px) [01:24:42, 02:54:04] */
 @media screen and (max-width: 768px) {
   .nav-links {
-    display: none; /* Hide top links to preserve clean mobile navbar */
+    display: none;
   }
-
-  .nav-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.85rem;
-  }
-
   .hero {
-    padding: 4rem 0 3rem;
+    padding: 3.5rem 0 2.5rem;
   }
-
   .hero-title {
     font-size: 2rem;
   }
-
-  .hero-desc {
-    font-size: 1rem;
-  }
-
-  .hero-cta-group {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
   .info-grid,
   .cards-grid {
-    grid-template-columns: 1fr; /* Single column on mobile [02:54:10] */
+    grid-template-columns: 1fr;
   }
-
   .timeline-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.5rem;
-  }
-
-  .timeline-time {
-    min-width: unset;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
-
-  .cta-content h2 {
-    font-size: 1.7rem;
   }
 }

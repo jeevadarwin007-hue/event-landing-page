@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CYBERPULSE 2026 | National College Technical Symposium</title>
-  <!-- Google Fonts: Inter & Outfit -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <!-- Navigation Bar [00:57:42] -->
+  <!-- Navigation Bar -->
   <header class="header">
     <nav class="navbar container">
       <div class="logo">
@@ -21,35 +21,60 @@
         <span class="logo-text">CYBER<span>PULSE</span> '26</span>
       </div>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
+        <li><a href="#home">Home</a></li>
         <li><a href="#details">Date & Venue</a></li>
         <li><a href="#highlights">Events</a></li>
         <li><a href="#schedule">Schedule</a></li>
       </ul>
-      <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary nav-btn">Register Now</a>
+      <!-- Working Registration Trigger Button -->
+      <button class="btn btn-primary nav-btn open-modal-btn">Register Now</button>
     </nav>
   </header>
 
   <main>
-    <!-- Hero / Banner Section [01:03:40] -->
+    <!-- Hero / Banner Section -->
     <section class="hero" id="home">
       <div class="container hero-content">
         <span class="badge">Annual National Technical Symposium</span>
         <h1 class="hero-title">Empowering Innovators of the Next Decade</h1>
         <p class="hero-desc">
-          Join over 1,000+ passionate tech enthusiasts, developers, and designers for a day of high-stakes hackathons, competitive coding, cybersecurity capture-the-flag challenges, and tech talks.
+          Join over 1,000+ passionate tech enthusiasts for a day of high-stakes hackathons, competitive coding, capture-the-flag security drills, and project showcases.
         </p>
+
+        <!-- Additional Feature: Live Countdown Timer -->
+        <div class="countdown-container">
+          <div class="countdown-card">
+            <span class="countdown-num" id="days">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-card">
+            <span class="countdown-num" id="hours">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-card">
+            <span class="countdown-num" id="minutes">00</span>
+            <span class="countdown-label">Minutes</span>
+          </div>
+          <div class="countdown-card">
+            <span class="countdown-num" id="seconds">00</span>
+            <span class="countdown-label">Seconds</span>
+          </div>
+        </div>
+
         <div class="hero-cta-group">
-          <!-- Primary Registration CTA linking to Google Form -->
-          <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
-            Register via Google Form &rarr;
-          </a>
-          <a href="#highlights" class="btn btn-secondary btn-large">Explore Events</a>
+          <!-- Registration Button Interaction -->
+          <button class="btn btn-primary btn-large open-modal-btn">
+            Register Online &rarr;
+          </button>
+          <!-- Feature: Button displaying an Alert -->
+          <button class="btn btn-secondary btn-large" id="alert-btn">
+            &#9432; Event Guidelines
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- Event Quick Information (Date, Time, Venue) [02:08:00] -->
+    <!-- Quick Info Cards -->
     <section class="section info-section" id="details">
       <div class="container info-grid">
         <article class="info-card">
@@ -75,17 +100,16 @@
       </div>
     </section>
 
-    <!-- Event Highlights / Competitions [02:39:00] -->
+    <!-- Highlights Section -->
     <section class="section highlights-section" id="highlights">
       <div class="container">
         <div class="section-header">
           <span class="sub-heading">Competitive Tracks</span>
           <h2 class="section-title">Featured Event Highlights</h2>
-          <p class="section-desc">Test your programming, security, and design skills with cash prizes up to &#8377;50,000.</p>
+          <p class="section-desc">Test your programming, security, and design skills with prize pools up to &#8377;50,000.</p>
         </div>
 
         <div class="cards-grid">
-          <!-- Card 1 -->
           <article class="event-card">
             <span class="tag">Flagship</span>
             <div class="event-icon">&#128187;</div>
@@ -97,19 +121,17 @@
             </ul>
           </article>
 
-          <!-- Card 2 -->
           <article class="event-card">
             <span class="tag">Security</span>
             <div class="event-icon">&#128272;</div>
             <h3>CyberShield CTF</h3>
-            <p>Jeopardy-style Capture The Flag challenge featuring cryptography, network analysis, and web exploitation.</p>
+            <p>Capture The Flag challenge featuring cryptography, network analysis, and web exploitation.</p>
             <ul class="event-meta">
               <li>Team Size: 2-3 Members</li>
               <li>Prize: &#8377;15,000</li>
             </ul>
           </article>
 
-          <!-- Card 3 -->
           <article class="event-card">
             <span class="tag">AI / ML</span>
             <div class="event-icon">&#129302;</div>
@@ -124,7 +146,7 @@
       </div>
     </section>
 
-    <!-- Schedule / Timeline [02:22:00] -->
+    <!-- Schedule Timeline -->
     <section class="section schedule-section" id="schedule">
       <div class="container">
         <div class="section-header">
@@ -140,15 +162,13 @@
               <p>Check-in at front desk, badge collection, and breakfast.</p>
             </div>
           </div>
-
           <div class="timeline-item">
             <div class="timeline-time">09:30 AM - 10:30 AM</div>
             <div class="timeline-content">
               <h4>Inauguration & Keynote Address</h4>
-              <p>Opening ceremony with our Chief Guest and Industry Keynote Speaker.</p>
+              <p>Opening ceremony with Industry Keynote Speaker.</p>
             </div>
           </div>
-
           <div class="timeline-item">
             <div class="timeline-time">10:30 AM - 01:00 PM</div>
             <div class="timeline-content">
@@ -156,47 +176,95 @@
               <p>Simultaneous tracks for CodeSprint, CTF qualifiers, and AI Expo.</p>
             </div>
           </div>
-
           <div class="timeline-item">
             <div class="timeline-time">01:00 PM - 02:00 PM</div>
             <div class="timeline-content">
               <h4>Networking Lunch</h4>
-              <p>Lunch provided for all registered participants.</p>
+              <p>Complimentary lunch for all registered attendees.</p>
             </div>
           </div>
-
-          <div class="timeline-item">
-            <div class="timeline-time">02:00 PM - 04:30 PM</div>
-            <div class="timeline-content">
-              <h4>Final Hack Phase & Project Judging</h4>
-              <p>Top finalists pitch to technical judges and jury panel.</p>
-            </div>
-          </div>
-
           <div class="timeline-item">
             <div class="timeline-time">04:30 PM - 05:30 PM</div>
             <div class="timeline-content">
               <h4>Valedictory & Prize Distribution</h4>
-              <p>Announcement of category winners, certificates, and trophy ceremony.</p>
+              <p>Announcement of winners, merit certificates, and trophy awards.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Call To Action Section [02:04:00] -->
+    <!-- CTA Banner -->
     <section class="cta-banner">
       <div class="container cta-content">
         <h2>Ready to Showcase Your Skills?</h2>
-        <p>Registrations close 48 hours prior to the event. Secure your spot now!</p>
-        <a href="https://forms.google.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large">
-          Complete Registration (Google Form)
-        </a>
+        <p>Registrations close 48 hours prior to the event. Secure your team's slot now!</p>
+        <button class="btn btn-primary btn-large open-modal-btn">
+          Open Registration Form &rarr;
+        </button>
       </div>
     </section>
   </main>
 
-  <!-- Footer [03:05:00] -->
+  <!-- Registration Modal (DOM Manipulation & Form Validation) -->
+  <div class="modal-overlay" id="registration-modal">
+    <div class="modal-card">
+      <button class="close-modal-btn" id="close-modal" aria-label="Close modal">&times;</button>
+      
+      <div class="modal-header">
+        <span class="badge">Official Registration</span>
+        <h3>CYBERPULSE '26 Entry Form</h3>
+        <p>Please enter your participant details to reserve your badge.</p>
+      </div>
+
+      <form id="event-reg-form" novalidate>
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullname">Full Name *</label>
+          <input type="text" id="fullname" placeholder="e.g. Darwin Jeeva" autocomplete="name">
+          <span class="error-msg" id="name-error">Please enter a valid name (at least 3 characters).</span>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">College / Personal Email *</label>
+          <input type="email" id="email" placeholder="e.g. darwin@example.com" autocomplete="email">
+          <span class="error-msg" id="email-error">Please enter a valid email address.</span>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="form-group">
+          <label for="phone">Phone Number (10 Digits) *</label>
+          <input type="tel" id="phone" placeholder="e.g. 9876543210" maxlength="10">
+          <span class="error-msg" id="phone-error">Please enter a valid 10-digit mobile number.</span>
+        </div>
+
+        <!-- Event Track Selection -->
+        <div class="form-group">
+          <label for="track">Select Competition Track *</label>
+          <select id="track">
+            <option value="">-- Choose an Event --</option>
+            <option value="CodeSprint 2.0">CodeSprint 2.0 (Competitive Coding)</option>
+            <option value="CyberShield CTF">CyberShield CTF (Cybersecurity)</option>
+            <option value="AI Project Expo">AI Project Expo (Machine Learning)</option>
+          </select>
+          <span class="error-msg" id="track-error">Please select an event track to proceed.</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Confirm & Register</button>
+      </form>
+
+      <!-- Success Notification Box -->
+      <div class="success-box" id="reg-success">
+        <div class="success-icon">&#10004;</div>
+        <h4>Registration Confirmed!</h4>
+        <p id="success-text">Thank you for registering. A confirmation pass has been sent to your email.</p>
+        <button class="btn btn-secondary" id="success-dismiss">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container footer-content">
       <p>&copy; 2026 CYBERPULSE Technical Symposium. All rights reserved.</p>
@@ -204,5 +272,7 @@
     </div>
   </footer>
 
+  <!-- Link JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
